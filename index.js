@@ -1,7 +1,9 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
+import App from './src/app';
+
 ReactDOM.render(
-  <h1>Team Status...</h1>,
+  <App />,
   document.getElementById('output')
 );
