@@ -20,9 +20,6 @@ bld/
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
 
-#NUNIT
-*.VisualState.xml
-TestResult.xml
 
 # Build Results of an ATL Project
 [Dd]ebugPS/
@@ -180,5 +177,3 @@ node_modules/**/*
 
 **/dist/**/*
 .DS_Store
-DagensIndustri.Di.Web/log*.txt
-DagensIndustri.Di.Web/styleguide/index.html
