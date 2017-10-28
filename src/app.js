@@ -17,15 +17,21 @@ class App extends Component {
             }, 3000);
         }
 
+        const viewBox = `0 0 ${this.props.width} ${this.props.height}`;
+        const style = {
+            width: '100%',
+            height: '100%',
+        };
+
         return (
-            <ScaledControl>
-                <div className='ts_main'>
-                    <h1>Team Status App ({this.props.initiated ? 'Redo' : 'Initierar...'})</h1>
-                    <svg width={this.props.width} height={this.props.height}>
+            <div className='ts_main'>
+                <h1>Team Status App ({this.props.initiated ? 'Redo' : 'Initierar...'})</h1>
+                <ScaledControl>
+                    <svg viewBox={viewBox} style={style}>
                         <Company />
                     </svg>
-                </div>
-            </ScaledControl>
+                </ScaledControl>
+            </div>
         );
     }
 }

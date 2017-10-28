@@ -1,8 +1,8 @@
 import * as types from '../actionTypes';
 
 const initialState = {
-  width: 800,
-  height: 600,
+  width: 600,
+  height: 250,
   initiated: false,
 };
 

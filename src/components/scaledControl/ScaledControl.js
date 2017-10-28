@@ -12,7 +12,7 @@ class ScaleControls extends Component {
 
     render() {
         return (
-            <div className='ts_scaled-control' style={{ transform: `scale(${this.state.scaleValue})` }} onClick={() => this.scale()}>
+            <div className='ts_scaled-control' style={{ transform: `scale(${this.state.scaleValue})`, transformOrigin: 'left top' }} onClick={() => this.scale()}>
                 {this.props.children}
             </div>
         );
