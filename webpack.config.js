@@ -1,12 +1,19 @@
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin');
 
+const htmlWebpackPlugin = new HtmlWebpackPlugin({
+    title: 'Team Status',
+    filename: '../index.html',
+    template: 'index_template.ejs', // Load a custom template (ejs by default see the FAQ for details)
+    inject: 'body',
+    hash: true,
+  });
 
 const extractLess = new ExtractTextPlugin({
-    filename: "[name].css", //"[name].[contenthash].css"
+    filename: "[name].css",//"[name].[contenthash].css"
     //disable: process.env.NODE_ENV === "development"
 });
-
-const ManifestPlugin = require('webpack-manifest-plugin');
 
 module.exports = {
     context: __dirname + "/",
@@ -49,6 +56,7 @@ module.exports = {
 
     plugins: [
         new ManifestPlugin({ fileName: 'build-manifest.json' }),
+        htmlWebpackPlugin,
         extractLess
     ]
 };
