@@ -1,0 +1,1 @@
+export const APP_INITIATED = 'APP_INITIATED';
