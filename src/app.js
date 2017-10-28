@@ -24,7 +24,7 @@ class App extends Component {
         };
 
         return (
-            <div className='ts_main'>
+            <div className='ts_output__main'>
                 <h1>Team Status App ({this.props.initiated ? 'Redo' : 'Initierar...'})</h1>
                 <ScaledControl>
                     <svg viewBox={viewBox} style={style}>
