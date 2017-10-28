@@ -3,7 +3,7 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
 import Company from './components/company';
-import ScaleControls from './components/scaleControls/ScaleControls';
+import ScaledControl from './components/scaledControl/ScaledControl';
 import * as appActions from './redux/actions/appActions';
 
 import './app.less';
@@ -18,11 +18,12 @@ class App extends Component {
         }
         
         return (
-            <div className='ts_main'>
-                <ScaleControls />
-                <h1>Team Status App ({ this.props.initiated ? 'Redo' : 'Initierar...' })</h1>
-                <Company />
-            </div>
+            <ScaledControl>
+                <div className='ts_main'>
+                    <h1>Team Status App ({ this.props.initiated ? 'Redo' : 'Initierar...' })</h1>
+                    <Company />
+                </div>
+            </ScaledControl>
         );
     }
 }
