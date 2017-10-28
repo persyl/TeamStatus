@@ -1,10 +1,12 @@
 import * as types from '../actionTypes';
 
 const initialState = {
-    initiated: false,
+  width: 800,
+  height: 600,
+  initiated: false,
 };
 
-export default (state = {users: []}, action) => {
+export default (state = initialState, action) => {
   switch (action.type) {
     case types.APP_INITIATED:
       return Object.assign({}, state, {
