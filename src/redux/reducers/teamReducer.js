@@ -1,12 +1,12 @@
 import * as types from '../actionTypes';
 
 const initialState = {
-  name: 'Company',
+  name: 'Team',
   width: 120,
-  height: 50,
-  fontSize: 22,
+  height: 30,
+  fontSize: 14,
   fontWeight: 'bold',
-  fontFill: '#a7100c',
+  fontFill: '#111111',
   backgroundFill: '#f7eae4',
 };
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import Company from './components/company/company';
+import Company from './components/company/Company';
 import ScaledControl from './components/scaledControl/ScaledControl';
 import * as appActions from './redux/actions/appActions';
 
@@ -18,16 +18,11 @@ class App extends Component {
         }
 
         const viewBox = `0 0 ${this.props.width} ${this.props.height}`;
-        const style = {
-            width: '100%',
-            height: '100%',
-        };
-
         return (
             <div className='ts_output__main'>
                 <h1>Team Status App ({this.props.initiated ? 'Redo' : 'Initierar...'})</h1>
                 <ScaledControl>
-                    <svg viewBox={viewBox} style={style}>
+                    <svg viewBox={viewBox} className='ts_output__main__svg'>
                         <Company />
                     </svg>
                 </ScaledControl>

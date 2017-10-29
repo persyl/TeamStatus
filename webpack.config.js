@@ -1,6 +1,7 @@
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
+const path = require('path');
 
 const htmlWebpackPlugin = new HtmlWebpackPlugin({
     title: 'Team Status',
@@ -16,16 +17,22 @@ const extractLess = new ExtractTextPlugin({
 });
 
 module.exports = {
-    context: __dirname + "/",
+    context: path.join(__dirname, "/"),
     entry: "./index.js",
     devServer: {
         contentBase: './',
         hot: true,
     },
     output: {
-        path: __dirname + "/dist",
+        path: path.join(__dirname, "/dist"),
         publicPath: "/",
         filename: "bundle.js"
+    },
+    resolve: {
+        modules: [
+            path.resolve('./node_modules'),
+            path.resolve('./src'),
+          ]
     },
     module: {
         rules: [
