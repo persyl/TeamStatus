@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import Member from 'components/member/Member';
-
-class Team extends Component {
+class Member extends Component {
     render() {
         const style = {
             fontSize: `${this.props.fontSize}px`,
@@ -14,8 +12,7 @@ class Team extends Component {
         return (
             <g transform={transform}>
                 <rect x='0' y='0' width={this.props.width} height={this.props.height} fill={this.props.backgroundFill} stroke='#222222' strokeWidth='1'></rect>
-                <text x="4" y={`${this.props.fontSize + 2}px`} style={style} fill={this.props.fontFill}>Team 1</text>
-                <Member xPos={this.props.width + 4} yPos='8' />
+                <text x="4" y={`${this.props.fontSize + 2}px`} style={style} fill={this.props.fontFill}>Member 1</text>
             </g>
         );
     }
@@ -23,13 +20,13 @@ class Team extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        name: state.team.name,
-        width: state.team.width,
-        height: state.team.height,
-        fontSize: state.team.fontSize,
-        fontWeight: state.team.fontWeight,
-        fontFill: state.team.fontFill,
-        backgroundFill: state.team.backgroundFill,
+        name: state.member.name,
+        width: state.member.width,
+        height: state.member.height,
+        fontSize: state.member.fontSize,
+        fontWeight: state.member.fontWeight,
+        fontFill: state.member.fontFill,
+        backgroundFill: state.member.backgroundFill,
     };
 };
 
@@ -39,4 +36,4 @@ const mapStateToProps = (state) => {
 //     };
 // };
 
-export default connect(mapStateToProps, null)(Team);
+export default connect(mapStateToProps, null)(Member);

@@ -15,7 +15,7 @@ class Company extends Component {
             <g transform="translate(0, 0)">
                 <rect width={this.props.width} height={this.props.height} x='0' y='0' fill={this.props.backgroundFill} stroke='#222222' strokeWidth='1'></rect>
                 <text x="4" y={`${this.props.fontSize + 2}px`} style={style} fill={this.props.fontFill}>{this.props.name}</text>
-                <Team xPos={this.props.width + 4} yPos='4' />
+                <Team xPos={this.props.width + 4} yPos='8' />
             </g>
         );
     }
