@@ -4,7 +4,7 @@ const initialState = {
   name: 'Team',
   width: 120,
   height: 30,
-  fontSize: 14,
+  fontSize: 12,
   fontWeight: 'bold',
   fontFill: '#111111',
   backgroundFill: '#f7eae4',

@@ -2,9 +2,9 @@ import * as types from '../actionTypes';
 
 const initialState = {
   name: 'Member',
-  width: 100,
+  width: 60,
   height: 20,
-  fontSize: 12,
+  fontSize: 6,
   fontWeight: 'bold',
   fontFill: '#111111',
   backgroundFill: '#dddddd',
