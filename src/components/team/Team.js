@@ -11,11 +11,15 @@ class Team extends Component {
             fontWeight: this.props.fontWeight,
         };
         const transform = `translate(${this.props.xPos}, ${this.props.yPos})`;
+        const memberXDistance = 8;
+        const memberYDistance = 8;
+
         return (
             <g transform={transform}>
                 <rect x='0' y='0' width={this.props.width} height={this.props.height} fill={this.props.backgroundFill} stroke='#222222' strokeWidth='1'></rect>
                 <text x="4" y={`${this.props.fontSize + 2}px`} style={style} fill={this.props.fontFill}>Team 1</text>
-                <Member xPos={this.props.width + 4} yPos='8' />
+                <line x1={this.props.width} y1='0' x2={this.props.width + memberXDistance} y2={memberYDistance} style={{ stroke: 'rgb(0,0,0)', strokeWidth: 1 }} />
+                <Member xPos={this.props.width + memberXDistance} yPos={memberYDistance} />
             </g>
         );
     }
