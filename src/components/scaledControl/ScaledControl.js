@@ -14,7 +14,7 @@ class ScaleControls extends Component {
         const classNames = this.state.scaleValue !== 1 ? 'ts_scaled-control ts_scaled-control--active' : 'ts_scaled-control';
 
         return (
-            <div className={classNames} style={{ transform: `scale(${this.state.scaleValue})`, transformOrigin: 'left top' }} onClick={() => this.scale()}>
+            <div className={classNames} style={{ transform: `scale(${this.state.scaleValue})`, transformOrigin: 'left top', transition:'transform 0.5s ease' }} onClick={() => this.scale()}>
                 {this.props.children}
             </div>
         );
