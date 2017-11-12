@@ -1,7 +1,6 @@
 import * as types from '../actionTypes';
 
-const initialState = {
-  height: 30,
+const initialState = {  
   fontSize: 12,
   fontWeight: 'bold',
   fontFill: '#111111',

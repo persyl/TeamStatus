@@ -16,15 +16,19 @@ class Company extends Component {
             fontSize: `${this.props.fontSize}px`,
             fontWeight: this.props.fontWeight,
         };
-        const teamXDistance = 8;
-        const teamYDistance = 8;
+
+        const parentDistance = {
+            x: 8,
+            y: 8,
+            connectX: -16,
+            connectY: -(this.props.height),
+        };
 
         return (
             <g transform="translate(0, 0)">
                 <rect width={this.props.width} height={this.props.height} x='0' y='0' fill={this.props.backgroundFill} stroke='#222222' strokeWidth='1'></rect>
                 <text x="4" y={`${this.props.fontSize + 2}px`} style={style} fill={this.props.fontFill}>{this.props.company.name}</text>
-                <line x1={this.props.width} y1='0' x2={this.props.width + teamXDistance} y2={teamYDistance + this.props.teamHeight / 2} style={{ stroke: 'rgb(0,0,0)', strokeWidth: 1 }} />
-                {this.props.teams.map((t, i) => <Team key={i} team={t} xPos={this.props.width + teamXDistance} yPos={teamYDistance} />)}
+                {this.props.teams.map((t, i) => <Team key={i} team={t} xPos={this.props.width + parentDistance.x} yPos={parentDistance.y} parentDistance={parentDistance} />)}
             </g>
         );
     }
