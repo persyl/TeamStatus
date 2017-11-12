@@ -9,34 +9,39 @@ import * as appActions from './redux/actions/appActions';
 import './app.less';
 
 class App extends Component {
-    render() {
+    constructor(props) {
+        super(props);
         if (!this.props.initiated) {
-            setTimeout(() => {
-                console.log('APP INIT CALLED...', this.props.initiated);
-                this.props.AppActions.appInit(); //For Redux demo purpose
-            }, 3000);
+            this.props.AppActions.appInit();
         }
+    }
 
-        const viewBox = `0 0 ${this.props.width} ${this.props.height}`;
+    render() {
         return (
             <div className='ts_output__main'>
                 <h1>Team Status App ({this.props.initiated ? 'Redo' : 'Initierar...'})</h1>
-                <ScaledControl>
-                    <svg viewBox={viewBox} className='ts_output__main__svg'>
-                        <Company />
-                    </svg>
-                </ScaledControl>
+                {this.props.companies.map((c, i) => this.renderCompanies(c, i))}
+
             </div>
         );
+    }
+
+    renderCompanies(company, idx) {
+        const viewBox = `0 0 ${this.props.width} ${this.props.height}`;
+        return (<ScaledControl key={idx}>
+            <svg viewBox={viewBox} className='ts_output__main__svg'>
+                <Company name={company.name} />
+            </svg>
+        </ScaledControl>);
     }
 }
 
 const mapStateToProps = (state) => {
-    console.log('APP STATE:', state);
     return {
         width: state.app.width,
         height: state.app.height,
         initiated: state.app.initiated,
+        companies: state.app.companies,
     };
 };
 
