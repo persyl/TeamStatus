@@ -15,7 +15,7 @@ class Member extends Component {
             <g transform={transform}>
                 {/* <rect x='0' y='0' width={this.props.width} height={this.props.height} fill={this.props.backgroundFill} stroke='#222222' strokeWidth='1'></rect> */}
                 <polygon points={polygonPoints} fill={this.props.backgroundFill} stroke='#222222' strokeWidth='1' />
-                <text textAnchor='middle' x={this.props.width/2} y={`${this.props.fontSize + 6}px`} style={style} fill={this.props.fontFill}>Member 1</text>
+                <text textAnchor='middle' x={this.props.width/2} y={`${this.props.fontSize + 6}px`} style={style} fill={this.props.fontFill}>{this.props.name}</text>
             </g>
         );
     }

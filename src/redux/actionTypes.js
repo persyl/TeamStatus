@@ -1,1 +1,2 @@
 export const APP_INITIATED = 'APP_INITIATED';
+export const TEAMS_FETCHED = 'TEAMS_FETCHED';

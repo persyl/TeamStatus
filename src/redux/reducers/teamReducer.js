@@ -1,8 +1,6 @@
 import * as types from '../actionTypes';
 
 const initialState = {
-  name: 'Team',
-  width: 120,
   height: 30,
   fontSize: 12,
   fontWeight: 'bold',
