@@ -21,7 +21,7 @@ class Team extends Component {
 
         return (
             <g transform={transform}>
-                <polygon points={polygonPoints} fill={this.props.backgroundFill} stroke='#222222' strokeWidth='1' />
+                <polygon points={polygonPoints} fill={this.props.backgroundFill} stroke='#222222' strokeWidth='0.6' />
                 <text textAnchor='middle' x={this.props.width / 2} y={`${this.props.fontSize + 6}px`} style={teamStyle} fill={this.props.fontFill}>{this.props.team.name}</text>
                 <line x1='0' y1={this.props.height / 2} x2={this.props.parentDistance.connectX} y2={this.props.parentDistance.connectY} style={{ stroke: 'rgb(0,0,0)', strokeWidth: 1 }} />
                 {this.props.members.map((m, i) => this.renderMember(m, i))}

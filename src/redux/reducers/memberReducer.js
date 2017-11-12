@@ -2,9 +2,9 @@ import * as types from '../actionTypes';
 
 const initialState = {
   fontSize: 6,
-  fontWeight: 'bold',
+  fontWeight: 'normal',
   fontFill: '#111111',
-  backgroundFill: '#dddddd',
+  backgroundFill: '#ffffff',
 };
 
 export default (state = initialState, action) => {

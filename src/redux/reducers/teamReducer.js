@@ -2,7 +2,7 @@ import * as types from '../actionTypes';
 
 const initialState = {  
   fontSize: 12,
-  fontWeight: 'bold',
+  fontWeight: 'normal',
   fontFill: '#111111',
   backgroundFill: '#f7eae4',
   members: [],
