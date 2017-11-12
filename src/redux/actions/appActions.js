@@ -2,7 +2,7 @@ import * as types from '../actionTypes';
 
 export function appInit() {
     return function (dispatch) {
-        const mockedCompanies = [{ name: 'Bonnier News' }];
+        const mockedCompanies = [{ id:1, name: 'Bonnier News' }];
         return Promise.resolve(mockedCompanies).then(companies => {
             dispatch(initiated(companies));
         })

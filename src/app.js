@@ -30,7 +30,7 @@ class App extends Component {
         const viewBox = `0 0 ${this.props.width} ${this.props.height}`;
         return (<ScaledControl key={idx}>
             <svg viewBox={viewBox} className='ts_output__main__svg'>
-                <Company name={company.name} />
+                <Company company={company} />
             </svg>
         </ScaledControl>);
     }
