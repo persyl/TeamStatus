@@ -12,19 +12,17 @@ class Member extends Component {
         
         return (
             <g transform={transform}>
-                <circle cx={this.props.width/2} cy={this.props.width/2} r={this.props.width/2} stroke='#222222' strokeWidth='1' fill={this.props.backgroundFill} />
-                <line x1='0' y1={this.props.height / 2} x2={this.props.parentDistance.connectX} y2={this.props.parentDistance.connectY} style={{ stroke: 'rgb(0,0,0)', strokeWidth: 1 }} />
-                <text textAnchor='middle' x={this.props.width/2} y={`${this.props.fontSize + 6}px`} style={style} fill={this.props.fontFill}>{this.props.name}</text>
+                <circle cx={this.props.radius} cy={this.props.radius} r={this.props.radius} stroke='#222222' strokeWidth='1' fill={this.props.backgroundFill} />
+                <line x1='0' y1={this.props.radius} x2={this.props.parentDistance.connectX} y2={this.props.parentDistance.connectY} style={{ stroke: 'rgb(0,0,0)', strokeWidth: 1 }} />
+                <text textAnchor='middle' x={this.props.radius} y={`${this.props.radius + 2}px`} style={style} fill={this.props.fontFill}>{this.props.member.name}</text>
             </g>
         );
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, props) => {
     return {
-        name: state.member.name,
-        width: state.member.width,
-        height: state.member.height,
+        radius: props.member.name.length * 2,
         fontSize: state.member.fontSize,
         fontWeight: state.member.fontWeight,
         fontFill: state.member.fontFill,

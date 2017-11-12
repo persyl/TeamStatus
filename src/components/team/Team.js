@@ -3,8 +3,14 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import Member from 'components/member/Member';
+import * as teamActions from 'redux/actions/teamActions';
 
 class Team extends Component {
+    constructor(props) {
+        super(props);
+        this.props.TeamActions.getMembers();
+    }
+
     render() {
         const teamStyle = {
             fontSize: `${this.props.fontSize}px`,
@@ -15,17 +21,16 @@ class Team extends Component {
             x: 8,
             y: 0,
             connectX: -8,
-            connectY: this.props.height/2,
+            connectY: this.props.height / 2,
         };
 
         const polygonPoints = `0,${this.props.height / 2}, ${this.props.width / 2},0, ${this.props.width},${this.props.height / 2}, ${this.props.width / 2}, ${this.props.height}`;
-
         return (
             <g transform={transform}>
                 <polygon points={polygonPoints} fill={this.props.backgroundFill} stroke='#222222' strokeWidth='1' />
                 <text textAnchor='middle' x={this.props.width / 2} y={`${this.props.fontSize + 6}px`} style={teamStyle} fill={this.props.fontFill}>{this.props.team.name}</text>
                 <line x1='0' y1={this.props.height / 2} x2={this.props.parentDistance.connectX} y2={this.props.parentDistance.connectY} style={{ stroke: 'rgb(0,0,0)', strokeWidth: 1 }} />
-                <Member xPos={this.props.width + parentDistance.x} yPos={parentDistance.y} parentDistance={parentDistance} />
+                {this.props.members.map((m, i) => <Member key={i} member={m} xPos={this.props.width + parentDistance.x} yPos={parentDistance.y} parentDistance={parentDistance} />)}
             </g>
         );
     }
@@ -39,15 +44,14 @@ const mapStateToProps = (state, props) => {
         fontWeight: state.team.fontWeight,
         fontFill: state.team.fontFill,
         backgroundFill: state.team.backgroundFill,
-        memberWidth: state.member.width,
-        memberHeight: state.member.height,
+        members: state.team.members,
     };
 };
 
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         AppActions: bindActionCreators(appActions, dispatch)
-//     };
-// };
+const mapDispatchToProps = (dispatch) => {
+    return {
+        TeamActions: bindActionCreators(teamActions, dispatch)
+    };
+};
 
-export default connect(mapStateToProps, null)(Team);
+export default connect(mapStateToProps, mapDispatchToProps)(Team);
