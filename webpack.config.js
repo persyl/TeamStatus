@@ -8,7 +8,7 @@ const htmlWebpackPlugin = new HtmlWebpackPlugin({
     filename: '../index.html',
     template: 'index_template.ejs', // Load a custom template (ejs by default see the FAQ for details)
     inject: 'body',
-    hash: true,
+    hash: true, //Will apply a hash to scripts and CSS files
   });
 
 const extractLess = new ExtractTextPlugin({
