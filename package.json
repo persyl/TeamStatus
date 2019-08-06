@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "Visually display teams of a company",
   "main": "index.js",
-  "homepage": "https://persyl.github.io/TeamStatus",
+  "homepage": "https://github.com/persyl/TeamStatus#readme",
   "scripts": {
     "start": "webpack && webpack-dev-server --hot --inline",
-    "deploy" : "webpack && gh-pages -d /",
+    "deploy": "webpack && gh-pages -d /",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,7 +21,6 @@
   "bugs": {
     "url": "https://github.com/persyl/TeamStatus/issues"
   },
-  "homepage": "https://github.com/persyl/TeamStatus#readme",
   "dependencies": {
     "babel-preset-react": "^6.24.1",
     "react": "^16.0.0",
